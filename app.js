@@ -5,7 +5,7 @@ const path = require('path');
 
 const app = express();
 
-// Load the certificate and key
+// Load the certificate and key and 
 const sslServerOptions = {
   key: fs.readFileSync(path.join(__dirname, 'server.key')),
   cert: fs.readFileSync(path.join(__dirname, 'server.cert')),
@@ -20,3 +20,4 @@ app.get('/', (req, res) => {
 https.createServer(sslServerOptions, app).listen(3000, () => {
   console.log('HTTPS Server running on https://localhost:3000');
 });
+
